@@ -37,7 +37,7 @@ const fileEntry = isReadme => ([ filePath, parsedMarkdown ]) => {
   const depth = getFileDepth(filePath)
   const fileTitle = formatTitle(getFileName(filePath))
 
-  return linkEntries(depth, fileTitle, filePath)
+  return linkEntries(depth+1, fileTitle, filePath)
 }
 
 const getFileTitle = parsedMarkdown =>
@@ -48,15 +48,15 @@ const getFileTitle = parsedMarkdown =>
     .map(title => title.trim())
 
 const depthEntries = (depth, entries) =>
-  Array(depth).join('    ') + entries
+  Array(depth).join('  ') + entries
 
-const sectionEntries = (title, path) => `\n## ${title}\n`
+const sectionEntries = (title, path) => `\n* ${title}\n`
 
 const disabledEntries = (depth, title) =>
-  depthEntries(depth, `- [${title}]()`)
+  depthEntries(depth, `* [${title}]()`)
 
 const linkEntries = (depth, title, path) =>
-  depthEntries(depth, `- [${title}](${path})`)
+  depthEntries(depth, `* [${title}](${path})`)
 
 const getFileDepth = path => path.match(/\//g).length
 

@@ -7,11 +7,7 @@ This plugin was created out of the frustration of not having a way to auto-gener
 
 ## Installation
 
-First you need to install the package using
-
-```shell
-$ npm i gitbook-plugin-summary --save
-```
+The GitHub repository url can be set in the book.json
 
  afterwards, you need to add to your `book.json` the plugin, like this
 
@@ -19,7 +15,8 @@ $ npm i gitbook-plugin-summary --save
 {
   "plugins": [
     "summary"
-  ]
+  ],
+  "github":"https://github.com/Lijunjie9502/"
 }
 ```
 
