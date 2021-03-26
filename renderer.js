@@ -60,7 +60,7 @@ const linkEntries = (depth, title, path) =>
 
 const getFileDepth = path => path.match(/\//g).length
 
-const getDirDepth = path => getFileDepth(path) - 1
+const getDirDepth = path => getFileDepth(path)
 
 const buildSummary = config => entries =>
   entries.join('\n')
